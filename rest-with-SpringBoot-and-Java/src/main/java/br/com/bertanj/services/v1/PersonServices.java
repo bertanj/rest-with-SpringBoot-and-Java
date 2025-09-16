@@ -1,7 +1,7 @@
-package br.com.bertanj.services;
+package br.com.bertanj.services.v1;
 
 import br.com.bertanj.Exception.ResourceNotFoundException;
-import br.com.bertanj.data.dto.PersonDTO;
+import br.com.bertanj.data.dto.v1.PersonDTO;
 import br.com.bertanj.model.Person;
 import br.com.bertanj.repository.PersonRepository;
 import org.slf4j.Logger;

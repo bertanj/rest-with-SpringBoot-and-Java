@@ -1,7 +1,7 @@
-package br.com.bertanj.controllers;
+package br.com.bertanj.controllers.v1;
 
-import br.com.bertanj.data.dto.PersonDTO;
-import br.com.bertanj.services.PersonServices;
+import br.com.bertanj.data.dto.v1.PersonDTO;
+import br.com.bertanj.services.v1.PersonServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
