@@ -4,21 +4,26 @@ import br.com.bertanj.serializer.GenderSerializer;
 import com.fasterxml.jackson.annotation.*;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
 @JsonPropertyOrder({ "id", "first_name", "last_name", "gender", "address" })
-@JsonFilter("PersonFilter")
+//@JsonFilter("PersonFilter")
+@JacksonXmlRootElement(localName = "person")
 public class PersonDTO implements Serializable {
 
     private static final long serialVersionUID= 1L;
 
     private Long id;
     @JsonProperty("first_name")
+    @JacksonXmlProperty(localName = "first_name")
     private String firstName;
     @JsonProperty("last_name")
+    @JacksonXmlProperty(localName = "last_name")
     private String lastName;
 
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
