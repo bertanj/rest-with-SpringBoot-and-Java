@@ -1,6 +1,7 @@
 package br.com.bertanj.Exception.handler;
 
 import br.com.bertanj.Exception.ExceptionResponse;
+import br.com.bertanj.Exception.RequiredObjectIsNullException;
 import br.com.bertanj.Exception.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,5 +27,11 @@ public class CustomEntityResponseHandler extends ResponseEntityExceptionHandler 
     public final ResponseEntity<ExceptionResponse> handleNotFoundExceptions(Exception e, WebRequest request){
         ExceptionResponse response = new ExceptionResponse(new Date(), e.getMessage(), request.getDescription(false));
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(RequiredObjectIsNullException.class)
+    public final ResponseEntity<ExceptionResponse> handleBadRequestExceptions(Exception e, WebRequest request){
+        ExceptionResponse response = new ExceptionResponse(new Date(), e.getMessage(), request.getDescription(false));
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 }

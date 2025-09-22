@@ -56,7 +56,7 @@ public class PersonServicesV2 {
         entity.setLastName(person.getLastName());
         entity.setAddress(person.getAddress());
         entity.setGender(person.getGender());
-        //entity.setBirthDay(person.getBirthDay());
+        entity.setBirthDate(person.getBirthDay());
 
         return converter.convertEntityToDTO(repository.save(entity));
     }
