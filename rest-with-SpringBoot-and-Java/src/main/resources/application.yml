@@ -20,3 +20,7 @@ logging:
   level:
     #root: warn
     br.com.bertanj: DEBUG
+spring-doc:
+  paths-to-match: /api/**/v1/**
+  swagger-ui:
+    use-root-path: true
