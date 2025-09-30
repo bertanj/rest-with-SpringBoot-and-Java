@@ -1,7 +1,6 @@
 package br.com.bertanj.model;
 
 import jakarta.persistence.*;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
